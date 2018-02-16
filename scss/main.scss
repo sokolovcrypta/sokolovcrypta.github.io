@@ -1,0 +1,58 @@
+@import './node_modules/susy/sass/susy';
+@import '_vars.scss';
+@import '_reset.scss';
+
+$susy: ( 'columns': susy-repeat(48),
+'gutters': 0,
+'spread': 'narrow',
+'container-spread': 'narrow',
+);
+
+
+body {
+    font-size: 14px;
+    background-color: #fff;
+    font-family: 'reg';
+}
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+* {
+    -webkit-backface-visibility: hidden;
+}
+
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1200px;
+    box-sizing: border-box;
+    @media (min-width: 1024px) {
+        padding: 0 40px;
+    }
+    @media (min-width: 1240px) {
+        padding: 0;
+    }
+    @media (min-width: 1560px) {
+        max-width: 1440px;
+    }
+}
+
+*:focus {
+    outline: none;
+}
+
+/* .item{
+    svg{
+        width: 1000px;
+        height: 1000px;
+    }
+    image{
+        clip-path: url(#clipping);
+    }
+}
+ */
+@import '_fonts.scss';

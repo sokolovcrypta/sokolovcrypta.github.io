@@ -34,9 +34,6 @@ input {
     padding: 0 20px;
     max-width: 1200px;
     box-sizing: border-box;
-    @media (min-width: 1024px) {
-        padding: 0 40px;
-    }
     @media (min-width: 1240px) {
         padding: 0;
     }
@@ -166,10 +163,20 @@ input {
 }
 
 .main {
-    background-color: #212530;
+    background: #212530;
     min-height: 540px;
     position: relative;
     max-height: 540px;
+    overflow: hidden;
+    &__bg {
+        position: absolute;
+        width: 550px;
+        z-index: 0;
+        opacity: 0.1;
+        pointer-events: none;
+        bottom: -20px;
+        left: -220px;
+    }
     &__img {
         display: none;
     }
@@ -204,6 +211,7 @@ input {
     text-align: center;
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 .button--orange-shadow {
@@ -227,6 +235,9 @@ input {
     }
     &--white {
         color: #fff;
+    }
+    &--big {
+        font-size: 24px;
     }
 }
 
@@ -435,7 +446,8 @@ input {
         p {
             font-size: 14px;
             color: #000;
-            font-family: 'med';
+            font-family: 'reg';
+            line-height: 1.2;
         }
         &--plus {
             span {
@@ -483,11 +495,22 @@ input {
         font-size: 14px;
         color: #000;
         font-family: 'med';
+        position: relative;
+        &::before {
+            position: absolute;
+            top: 5px;
+            left: -10px;
+            width: 5px;
+            height: 5px;
+            background-color: #1150f0;
+            content: '';
+        }
         &+li {
             margin-top: 20px;
         }
     }
     ul {
+        padding-left: 18px;
         &+h3 {
             margin-top: 45px;
         }
@@ -525,6 +548,7 @@ input {
         color: $orange;
         font-family: 'semibold';
         margin-bottom: 20px;
+        line-height: 1.2;
     }
     &__text {
         display: none;
@@ -627,6 +651,116 @@ input {
     font-family: 'semibold';
 }
 
+
+.media {
+    padding: 30px 0 50px;
+    background-color: #fafafa;
+    &__container {}
+    &__title {
+        margin-bottom: 20px;
+    }
+    &__body {
+        width: 280px;
+        font-size: 0;
+        margin: 0 auto;
+    }
+    &__item {
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+        box-sizing: border-box;
+        height: 140px;
+        position: relative;
+        border: solid 1px rgba(52, 58, 74, 0.1);
+        &:nth-child(even) {
+            border-left: none;
+        }
+        &:nth-child(n+3) {
+            border-top: none;
+        }
+        img {
+            position: absolute;
+            opacity: 0.5;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &--noname {
+            img {
+                width: 33px;
+            }
+        }
+        &--eldoce {
+            img {
+                width: 100px;
+            }
+        }
+        &--radnac {
+            img {
+                width: 115px;
+            }
+        }
+        &--perfil {
+            img {
+                width: 100px;
+            }
+        }
+        &--lavoz {
+            img {
+                width: 65px;
+            }
+        }
+        &--canal10 {
+            img {
+                width: 55px;
+            }
+        }
+    }
+}
+
+
+.footer{
+    &__map{
+        width: 100%;
+        height: 200px;
+        margin: 0 auto;
+    }
+    &__bottom{
+        text-align: center;
+        padding: 13px 0 10px;
+        p{
+            font-size: 10px;
+            color: #000;
+        }
+    }
+}
+
+@media (min-width: 460px) {
+    .media {
+        &__body {
+            width: 420px;
+        }
+        &__item {
+            width: 33.3333%;
+            &:nth-child(even) {
+                border-left: solid 1px rgba(52, 58, 74, 0.1);
+            }
+            &:nth-child(n+3) {
+                border-top: solid 1px rgba(52, 58, 74, 0.1);
+            }
+            &:nth-child(n+4) {
+                border-top: none;
+            }
+            &+.media__item {
+                border-left: none;
+            }
+            &:nth-child(3n+1) {
+                border-left: solid 1px rgba(52, 58, 74, 0.1)!important;
+            }
+        }
+    }
+}
+
 @media (min-width: 560px) {
     .text--main {
         .text {
@@ -675,6 +809,7 @@ input {
             &__item {
                 display: inline-block;
                 color: #fff;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.5);
                 &+.menu__item {
                     margin-top: 0;
                     margin-left: 15px;
@@ -689,6 +824,9 @@ input {
     .main {
         min-height: 666px;
         max-height: 666px;
+        &__body {
+            // padding: 0;
+        }
         &__button {
             width: span(4.5 of 12);
         }
@@ -736,7 +874,7 @@ input {
 
     .form--mail {
         .form {
-            &__body{
+            &__body {
                 font-size: 0;
             }
             &__text {
@@ -758,8 +896,8 @@ input {
         }
     }
 
-    .text--form{
-        h5{
+    .text--form {
+        h5 {
             font-size: 21px;
             line-height: 24px;
         }
@@ -799,71 +937,71 @@ input {
         }
     }
 
-    .support{
+    .support {
         padding: 135px 0 150px;
-        &__container{
+        &__container {
             font-size: 0;
         }
-        &__title{
+        &__title {
             margin-bottom: 50px;
         }
-        &__left{
+        &__left {
             display: inline-block;
             width: span(6 of 12);
             vertical-align: top;
         }
-        &__right{
+        &__right {
             display: inline-block;
             width: span(5 of 12);
             margin-left: span(1 of 12);
             vertical-align: top;
             padding: 0;
         }
-        &__benefits{
+        &__benefits {
             margin: 0;
             padding: 30px 35px 50px;
         }
     }
 
-    .text--support{
-        a{
+    .text--support {
+        a {
             font-size: 24px;
         }
-        h3{
+        h3 {
             font-size: 24px;
             line-height: 1.2;
             margin-bottom: 15px;
         }
-        p{
-            & + span{
+        p {
+            &+span {
                 margin-top: 25px;
             }
         }
-        span{
+        span {
             font-size: 16px;
         }
-        li{
+        li {
             font-size: 16px;
         }
     }
 
-    .benefits{
-        &__title{
+    .benefits {
+        &__title {
             font-size: 21px;
             margin-bottom: 35px;
         }
-        &__item{
+        &__item {
             padding-right: span(0.5 of 6);
-            span{
+            span {
                 font-size: 35px;
             }
-            p{
+            p {
                 font-size: 14px;
             }
-            &--plus{
-                span{
+            &--plus {
+                span {
                     position: relative;
-                    &::before{
+                    &::before {
                         position: absolute;
                         font-size: 35px;
                         left: -20px;
@@ -872,74 +1010,74 @@ input {
             }
         }
     }
-    .speakers{
+    .speakers {
         padding: 65px 0 200px;
-        &__title{
+        &__title {
             margin-bottom: 80px;
         }
     }
-    .speaker{
+    .speaker {
         font-size: 0;
-        &__photo{
+        &__photo {
             width: span(5.5 of 12);
             display: inline-block;
             vertical-align: top;
             margin: 0;
         }
-        &__body{
+        &__body {
             width: span(5 of 12);
             margin-left: span(0.5 of 12);
             display: inline-block;
             vertical-align: top;
         }
-        &__logo{
+        &__logo {
             width: span(2 of 5);
             margin-bottom: 20px;
-            img{
+            img {
                 width: 100%;
             }
         }
-        &__name{
+        &__name {
             margin-bottom: 25px;
-            h3{
+            h3 {
                 font-size: 24px;
             }
-            p{
+            p {
                 font-size: 14px;
             }
         }
-        &__theme{
+        &__theme {
             font-size: 18px;
             margin-left: 40px;
         }
-        &__more{
+        &__more {
             margin-left: 40px;
         }
-        &__text{
+        &__text {
             display: block;
             margin-bottom: 30px;
         }
     }
-    .text--speaker{
+    .text--speaker {
         margin-left: 40px;
-        p{
+        p {
             font-size: 16px;
             color: #fff;
-            & + p{
+            &+p {
                 margin-top: 10px;
             }
-            & + ul{
+            &+ul {
                 margin-top: 15px;
             }
         }
-        ul{
+        ul {
             padding-left: 15px;
         }
-        li{
+        li {
             font-size: 16px;
             color: #fff;
             position: relative;
-            &:before{
+            &:before {
                 position: absolute;
                 content: '';
                 width: 4px;
@@ -948,53 +1086,351 @@ input {
                 top: 6px;
                 left: -12px;
             }
-            & + li{
+            &+li {
                 margin-top: 10px;
             }
         }
     }
-    .tickets{
+    .tickets {
         padding: 60px 0 75px;
-        &__title{
+        &__title {
             margin-bottom: 45px;
-            padding-left: 16px;
+            padding-left: span(0.5 of 12);
         }
-        &__body{
+        &__body {
             font-size: 0;
+            box-sizing: border-box;
+            padding: 0 span(0.5 of 12)
         }
-        &__item{
-            width: 50%;
+        &__item {
+            width: span(5.2 of 11);
             display: inline-block;
             vertical-align: top;
             box-sizing: border-box;
-            padding: 0 16px;
             height: 430px;
             margin-bottom: 35px;
-            & + .tickets__item{
+            &+.tickets__item {
                 margin-top: 0;
+            }
+            &:nth-child(even) {
+                margin-left: span(0.6 of 11);
             }
         }
     }
 
-    .ticket{
-        &__wrapper{
+    .ticket {
+        &__wrapper {
             position: relative;
         }
-        &__body{
+        &__body {
             height: 100%;
             box-sizing: border-box;
         }
-        &__button{
+        &__button {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
         }
-        &__plan{
+        &__plan {
             width: 80%;
         }
     }
+
+    .media {
+        padding: 60px 0 90px;
+        &__title {
+            margin-bottom: 50px;
+            padding-left: span(0.5 of 12);
+        }
+        &__body {
+            width: 728px;
+        }
+        &__item {
+            height: 242px;
+            &--noname {
+                img {
+                    width: 57px;
+                }
+            }
+            &--eldoce {
+                img {
+                    width: 176px;
+                }
+            }
+            &--radnac {
+                img {
+                    width: 200px;
+                }
+            }
+            &--perfil {
+                img {
+                    width: 180px;
+                }
+            }
+            &--lavoz {
+                img {
+                    width: 110px;
+                }
+            }
+            &--canal10 {
+                img {
+                    width: 95px;
+                }
+            }
+        }
+    }
 }
+
+@media (min-width: 1024px) {
+    .menu--lang {
+        .menu__item+.menu__item {
+            margin-left: 25px;
+        }
+    }
+
+    .main {
+        overflow: hidden;
+        &__left {
+            width: span(7 of 12);
+            padding-left: 20px;
+        }
+        &__body {
+            padding: 0;
+        }
+        &__title {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        &__button {
+            width: span(3.5 of 7);
+        }
+        &__img--standart {
+            display: block;
+            position: absolute;
+            top: 60px;
+            right: -60px;
+            img {
+                width: 494px;
+            }
+        }
+        &__text {
+            margin-bottom: 50px;
+        }
+    }
+
+    .text--main {
+        .text {
+            &__col {
+                width: span(3.5 of 7);
+                padding-right: span(0.5 of 7);
+            }
+        }
+    }
+
+    .shedule {
+        &__title {
+            padding-left: span(1 of 12);
+        }
+        &__body {
+            width: span(10 of 12);
+            margin: 0 auto 40px;
+        }
+        &__form {
+            width: span(10 of 12);
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+    }
+
+    .list--shedule {
+        .list {
+            &__date {
+                width: span(4.5 of 10);
+            }
+            &__time {
+                width: span(1.5 of 10);
+                margin-left: span(0.5 of 10);
+            }
+            &__button {
+                margin-left: span(2 of 10);
+            }
+        }
+    }
+
+    .form--mail {
+        .form {
+            &__text {
+                width: span(3.5 of 9);
+            }
+            &__line {
+                width: span(5 of 9);
+                margin-left: span(0.5 of 9);
+            }
+            &__input {
+                width: span(4 of 5);
+            }
+        }
+    }
+    .support {
+        padding: 135px 0 35px;
+        &__benefits {
+            padding: 50px 60px 5px;
+        }
+        &__title {
+            padding-left: span(1 of 12);
+            margin-bottom: 55px;
+        }
+        &__text {
+            margin-bottom: 30px;
+            p {
+                width: span(3.5 of 5);
+            }
+        }
+        &__left {
+            width: span(5 of 12);
+            margin-left: span(1 of 12);
+        }
+        &__right {
+            width: span(4 of 12);
+            margin-left: span(1 of 12);
+        }
+    }
+
+    .benefits {
+        &__item {
+            padding: 0;
+            margin-bottom: 50px;
+            &:nth-child(even) {
+                padding-left: span(0.3 of 4);
+            }
+        }
+    }
+
+    .text--support {
+        p {
+            line-height: 1.2;
+            &+span {
+                margin-top: 20px;
+            }
+        }
+        span {
+            margin-bottom: 15px;
+        }
+        ul {
+            padding: 0;
+            &+h3 {
+                margin-top: 75px;
+            }
+        }
+        h3 {
+            margin-bottom: 10px;
+        }
+        li {
+            &+li {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .speakers {
+        padding: 65px 0 185px;
+        &__title {
+            margin-bottom: 80px;
+            padding-left: span(1 of 12);
+        }
+        &__body {
+            width: span(9 of 12);
+            margin-left: span(1 of 12);
+        }
+    }
+
+    .speaker {
+        &__photo {
+            width: span(5 of 9);
+        }
+        &__body {
+            padding-top: 20px;
+            width: span(3.5 of 9);
+            margin-left: span(0.5 of 9);
+        }
+        &__theme {
+            margin-left: 35px;
+        }
+        &__text {
+            margin-left: 35px;
+        }
+        &__logo {
+            width: 105px;
+        }
+        &__name {
+            h3 {
+                font-size: 30px;
+            }
+            p {
+                font-size: 16px;
+            }
+            margin-bottom: 20px;
+        }
+    }
+
+    .tickets {
+        padding: 70px 0 65px;
+        &__title {
+            padding-left: span(1 of 12);
+            margin-bottom: 50px;
+        }
+        &__body {
+            width: span(8 of 12);
+            margin-left: span(1 of 12);
+            padding: 0;
+        }
+    }
+    .media {
+        padding: 60px 0 95px;
+        &__title {
+            padding-left: span(1 of 12);
+        }
+        &__body {
+            width: 984px;
+        }
+        &__item {
+            height: 329px;
+            &--noname {
+                img {
+                    width: 100px;
+                }
+            }
+            &--eldoce {
+                img {
+                    width: 240px;
+                }
+            }
+            &--radnac {
+                img {
+                    width: 275px;
+                }
+            }
+            &--perfil {
+                img {
+                    width: 240px;
+                }
+            }
+            &--lavoz {
+                img {
+                    width: 150px;
+                }
+            }
+            &--canal10 {
+                img {
+                    width: 130px;
+                }
+            }
+        }
+    }
+}
+
+
 
 
 /* .item{

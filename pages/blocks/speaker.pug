@@ -2,7 +2,7 @@
 	+e.container.container
 		+e.H2.title.title--white Спикеры конгресса
 		+e.body
-			+e.item--photo-left.speaker__
+			+e.item.speaker__.--photo-left
 				+e.photo
 					img(src="/img/speakers/1.png")
 				+e.body
@@ -28,3 +28,23 @@
 							li ICO с 2016 года
 							li блокчейн-курс с 2017 года
 					+e.BUTTON(type="button").more.button--blue-text Подробнее
+			+e.item.speaker__.--photo-right
+				+e.photo
+					img(src="/img/speakers/1.png")
+				+e.body
+					+e.logo
+						img(src="/img/speakers/logo.png")
+					+e.wrapper
+						+e.name
+							h3 Александр Петров
+							p Москва, Россия
+						+e.socials.socials__.--speaker
+							+e.A(href="#").item--fb
+							+e.A(href="#").item--in
+					+e.theme Тема доклада:<br>
+						|  «Финансирование ICO. Бизнес-модели блокчейн-стартапов. Рентабельность в криптомире»
+					+e.text.text--speaker
+						p Александр является предпринимателем в сфере оптовой торговли, частным инвестором с опытом в онлайн- и оффлайн-бизнесе с 1995 года. В 2003 г. он создал розничную торговую сеть в Санкт- Петербурге, которая была продана в 2011 году за 11 миллионов долларов.
+					+e.BUTTON(type="button").more.button--blue-text Подробнее
+	+e.bg
+		img(src="/img/back.svg")

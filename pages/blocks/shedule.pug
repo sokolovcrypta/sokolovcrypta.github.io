@@ -37,14 +37,16 @@
 					p Богота, Колумбия
 				+e.time 11.00 — 18.00 	
 				+e.A(href="#").button.button--orange-text Купить билет
-		+e.FORM.form.form__.--mail
+		+e.FORM(action="" method="POST").form.form__.--mail
 			+e.body
 				+e.text.text--form
 					h5 Хотите ознакомиться с подробной программой?
 					p Мы пришлём вам её на почту
 				+e.line
 					+e.input.input
-						input(placeholder="Введите e-mail")
+						input(placeholder="Введите e-mail" name="email" type="email")
 					+e.button.button--arrow-orange
 			+e.response.text--response
-				p Письмо с программой уже отправлено к вам.
+				p Спасибо, программа придёт на указанный емаил в ближайшее время.
+			+e.preloader.preloader__
+				+e.spinner

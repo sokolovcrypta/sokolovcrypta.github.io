@@ -18,9 +18,19 @@ $(document).ready(function() {
 
     $(".menu--nav .menu__item").on("click", function (event) {
 		event.preventDefault();
+		$('body').removeClass('open-menu');
 		var id  = $(this).find('a').attr('href'),
-			top = $(id).offset().top;
-		$('body,html').animate({scrollTop: top}, 1500);
+			top = $(id).offset().top - 30;
+		$('body,html').animate({scrollTop: top}, 1000);
 	});
+
+
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 10){
+			$('.header').addClass('fixed');
+		} else {
+			$('.header').removeClass('fixed');
+		}
+	})
 });
 },{}]},{},[1]);

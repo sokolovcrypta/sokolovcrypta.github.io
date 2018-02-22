@@ -48,12 +48,49 @@ input {
 
 
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 2;
     padding: 25px 0;
+    transition: 0.3s ease;
+    &.fixed{
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        padding: 10px 0;
+        .menu--lang{
+            .menu__item{
+                color: rgba(33,37,48,.3);
+            }
+        }
+        .menu--nav{
+            .menu__item{
+                color: rgb(33, 37, 48);
+                border-bottom: 1px solid rgba(33, 37, 48, 0.5);
+            }
+        }
+        .header__hamburger{
+            top: 5px;
+            span{
+                background-color: #000;
+                &::before, &::after{
+                    background-color: #000;
+                }
+            }
+        }
+        @media (min-width: 768px){
+            padding: 20px 0;
+        }
+        @media (min-width: 1240px){
+            .menu--nav{
+            .menu__item{
+                color: rgb(33, 37, 48);
+                border-bottom: 1px solid rgba(33, 37, 48, 0);
+            }
+        }
+        }
+    }
     &__menu {
         transform: translate(0, -100%);
         position: fixed;
@@ -79,6 +116,7 @@ input {
         top: 19px;
         right: 15px;
         z-index: 2;
+        transition: 0.3s ease;
         span,
         span::after,
         span::before {
@@ -113,7 +151,7 @@ input {
     overflow: hidden;
     .header__hamburger {
         span {
-            background-color: rgba(255, 255, 255, 0);
+            background-color: rgba(255, 255, 255, 0)!important;
             &::before {
                 transform: translate(0, 0) rotate(45deg);
                 background-color: #000;
@@ -136,6 +174,7 @@ input {
 
 .menu {
     &__item {
+        transition: 0.3s ease;
         a {
             color: inherit;
             text-decoration: none;
@@ -155,6 +194,16 @@ input {
         }
         &+.menu__item {
             margin-left: 15px;
+        }
+    }
+}
+
+.header{
+    .menu--lang{
+        .menu__item{
+            &.active{
+                 color: $orange;
+            }
         }
     }
 }
@@ -184,6 +233,7 @@ input {
         pointer-events: none;
         bottom: -20px;
         left: -220px;
+        display: none;
         path {
             stroke-dasharray: 1000;
             stroke-dashoffset: 1000;
@@ -444,7 +494,7 @@ input {
 }
 
 .support {
-    padding: 55px 0 150px;
+    padding: 55px 0 50px;
     &__title {
         margin-bottom: 25px;
     }
@@ -481,7 +531,7 @@ input {
         span {
             font-size: 36px;
             font-family: 'semibold';
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             display: block;
         }
         p {
@@ -572,6 +622,7 @@ input {
         opacity: .05;
         top: 0;
         pointer-events: none;
+        display: none;
     }
     &__title {
         margin-bottom: 30px;
@@ -639,6 +690,8 @@ input {
     }
     &__logo {
         margin-bottom: 10px;
+        text-decoration: none;
+        display: block;
         &:before {
             font-size: 20px;
             color: #fff;
@@ -717,7 +770,8 @@ input {
     &__title {
         margin-bottom: 40px;
     }
-    &__item {
+    &__item {        
+        max-width: 340px;
         &+.tickets__item {
             margin-top: 20px;
         }
@@ -803,14 +857,12 @@ input {
     padding: 30px 0 50px;
     background-color: #fafafa;
     overflow: hidden;
-    &__container {}
     &__title {
         margin-bottom: 20px;
     }
     &__body {
         width: 280px;
         font-size: 0;
-        margin: 0 auto;
     }
     &__item {
         width: 50%;
@@ -961,6 +1013,19 @@ input {
     }
 }
 
+
+@media (min-width: 600px) {
+    
+    .button--orange-shadow{
+        height: 60px;
+        line-height: 60px;
+    }
+
+    .benefits__item{
+        width: 25%;
+    }
+}
+
 @media (min-width: 768px) {
 
     .header {
@@ -1007,9 +1072,6 @@ input {
     .main {
         min-height: 666px;
         max-height: 666px;
-        &__body {
-            // padding: 0;
-        }
         &__button {
             width: span(4.5 of 12);
         }
@@ -1024,9 +1086,10 @@ input {
             margin-bottom: 70px;
         }
         &__bg {
-            width: 900px;
-            bottom: -76px;
-            left: -295px;
+            width: 1380px;
+            bottom: -136px;
+            left: -675px;
+            display: block;
         }
     }
 
@@ -1042,7 +1105,7 @@ input {
         }
         .text {
             &__col {
-                width: span(4.5 of 12);
+                width: 41.5%;
                 padding-right: span(0.2 of 12);
             }
         }
@@ -1180,6 +1243,7 @@ input {
         }
         &__item {
             padding-right: span(0.5 of 6);
+            width: 50%;
             span {
                 font-size: 35px;
             }
@@ -1210,7 +1274,9 @@ input {
             margin-bottom: 80px;
         }
         &__bg {
-            width: 5000px;
+            left: -2000px;
+            top: -210px;
+            display: block;
         }
     }
     .speaker {
@@ -1289,7 +1355,7 @@ input {
                 width: 4px;
                 height: 4px;
                 background-color: #fff;
-                top: 6px;
+                top: 8px;
                 left: -12px;
             }
             &+li {
@@ -1315,6 +1381,7 @@ input {
             box-sizing: border-box;
             height: 430px;
             margin-bottom: 35px;
+            max-width: none;
             &+.tickets__item {
                 margin-top: 0;
             }
@@ -1468,15 +1535,15 @@ input {
         }
         &__bg {
             width: 1600px;
-            bottom: -300px;
-            left: -480px;
+            bottom: -330px;
+            left: -770px;
         }
     }
 
     .text--main {
         .text {
             &__col {
-                width: span(3.5 of 7);
+                width: 48%;
                 padding-right: span(0.5 of 7);
             }
         }
@@ -1592,6 +1659,10 @@ input {
         &__title {
             margin-bottom: 80px;
             padding-left: span(1 of 12);
+        }
+        &__bg{
+            left: -2130px;
+            top: -150px;
         }
         &__body {
             width: span(10 of 12);
@@ -1790,8 +1861,8 @@ input {
         }
         &__bg {
             width: 4200px;
-            bottom: -1576px;
-            left: -1500px;
+            bottom: -1626px;
+            left: -1750px;
         }
     }
 
@@ -1826,7 +1897,7 @@ input {
                     min-height: 100%;
                     height: 100%;
                     width: auto!important;
-                    animation: move 250s linear infinite;
+                    animation: move 190s linear infinite;
                 }
             }
         }
@@ -1936,10 +2007,11 @@ input {
         padding: 65px 0 230px;
         &__title {
             padding-left: 0;
-            margin-bottom: 80px;
+            margin-bottom: 120px;
         }
         &__bg {
-            width: 6000px;
+            left: -2130px;
+            top: -70px;
         }
         &__item+.speakers__item {
             margin-top: 250px;
@@ -1948,12 +2020,14 @@ input {
 
     .speaker {
         &__logo {
+            transition: 0.3s ease;
+            opacity: 0.5;
             &::before {
                 font-size: 32px;
             }
         }
         &__body {
-            padding-top: 0;
+            padding-top: 40px;
             width: span(4 of 10);
         }
         &__text {
@@ -2065,6 +2139,10 @@ input {
             margin-left: span(0.5 of 12);
         }
     }
+
+    .button--orange-shadow{
+        box-shadow: 0 13px 29px 0 rgba(246,146,31,0);
+    }
 }
 
 @media (min-width: 1560px) {
@@ -2095,16 +2173,6 @@ input {
             }
         }
     }
-    /* .item{
-    svg{
-        width: 1000px;
-        height: 1000px;
-    }
-    image{
-        clip-path: url(#clipping);
-    }
-}
- */
     .text--main {
         h2 {
             font-size: 36px;
@@ -2207,6 +2275,10 @@ input {
         &__body {
             width: span(8.5 of 12);
             margin-left: span(1.5 of 12);
+        }
+        &__bg{
+            left: -1590px;
+            top: 440px;
         }
     }
 
@@ -2383,6 +2455,13 @@ input {
             }
         }
     }
+
+    .speaker{
+        &__logo{
+            opacity: 1;
+        }
+    }
+
     .menu--lang {
         .menu {
             &__item {
@@ -2454,6 +2533,9 @@ input {
                 }
                 &__point {
                     color: #fff;
+                    &::before{
+                        color: #009cff;
+                    }
                 }
                 &__button {
                     background-color: $orange;

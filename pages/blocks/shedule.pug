@@ -1,52 +1,52 @@
 +b#shedule.shedule
 	+e.container.container
-		+e.H2.title.title Расписание конгресса
+		+e.H2.title.title Itinerario del congreso
 		+e.body.list__.--shedule
 			+e.item
 				+e.date.text--date
-					h4 6 апреля, пятница
-					p Национальный Университет, зал Magna 
-					p Кордова, Аргентина
+					h4 6 de abril 2018, viernes
+					p Universidad Nacional de Córdoba, Aula Magna 
+					p Córdoba, Argentina
 				+e.time 11.00 — 12.00 	
-				+e.A(href="#").button.button--orange-text Купить билет
+				+e.A(href="https://www.eventbrite.com.ar/e/congreso-blockchain-cordoba-2018-tickets-42975704489" target="_blank").button.button--orange-text ENTRADAS
 			+e.item
 				+e.date.text--date
-					h4 6 апреля, пятница
-					p Национальный Университет, факультет экономических наук
-					p Кордова, Аргентина
+					h4 6 de abril 2018, viernes
+					p Universidad Nacional de Córdoba, Facultad de Ciencias Económicas
+					p Córdoba, Argentina
 				+e.time 15.00 — 17.00 	
-				+e.A(href="#").button.button--orange-text Купить билет
+				+e.A(href="https://www.eventbrite.com.ar/e/congreso-blockchain-cordoba-2018-tickets-42975704489" target="_blank").button.button--orange-text ENTRADAS
 			+e.item
 				+e.date.text--date
-					h4 7 апреля, суббота
-					p Университет Блез Паскаль
-					p Кордова, Аргентина
+					h4 7 de abril 2018, viernes
+					p Universidad Blas Pascal, evento principal
+					p Córdoba, Argentina
 				+e.time 11.00 — 18.00 	
-				+e.A(href="#").button.button--orange-text Купить билет
+				+e.A(href="https://www.eventbrite.com.ar/e/congreso-blockchain-cordoba-2018-tickets-42975704489" target="_blank").button.button--orange-text ENTRADAS
 			+e.item
 				+e.date.text--date
-					h4 10 апреля, вторник
-					p Митап в Espacio Bitcoin
-					p Буэнос-Айрес, Аргентина
+					h4 10 de abril 2018, martes
+					p Espacio Bitcoin, meetup
+					p Buenos Aires, Argentina
 				+e.time 18.00 — 21.00 	
-				+e.A(href="#").button.button--orange-text Купить билет
+				+e.A(href="https://www.eventbrite.com.ar/e/congreso-blockchain-cordoba-2018-tickets-42975704489" target="_blank").button.button--orange-text ENTRADAS
 			+e.item
 				+e.date.text--date
-					h4 14 апреля, суббота
-					p Отель Double Tree by Hilton
-					p Богота, Колумбия
+					h4 14 de abril 2018, viernes
+					p Hotel Double Tree by Hilton, evento principal
+					p Bogotá, Colombia
 				+e.time 11.00 — 18.00 	
-				+e.A(href="#").button.button--orange-text Купить билет
+				+e.A(href="https://www.eventbrite.com.ar/e/congreso-blockchain-cordoba-2018-tickets-42975704489" target="_blank").button.button--orange-text ENTRADAS
 		+e.FORM(action="" method="POST").form.form__.--mail
 			+e.body
 				+e.text.text--form
-					h5 Хотите ознакомиться с подробной программой?
-					p Мы пришлём вам её на почту
+					h5 Le gustaría recibir horario detallado de todos los dias?
+					p Dejenos su correo electrónico y se lo enviamos
 				+e.line
-					+e.input.input
-						input(placeholder="Введите e-mail" name="email" type="email")
+					+e.input--esp.input
+						input(placeholder="Correo electronico" name="email" type="email")
 					+e.button.button--arrow-orange
 			+e.response.text--response
-				p Спасибо, программа придёт на указанный емаил в ближайшее время.
+				p ¡Gracias por suscribirse! En breve estará recibiendo el programa a su correo.
 			+e.preloader.preloader__
 				+e.spinner

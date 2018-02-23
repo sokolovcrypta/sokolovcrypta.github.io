@@ -26,17 +26,37 @@ $(document).ready(function() {
 
 
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 10) {
-            $('.header').addClass('fixed');
+        if ($(this).outerWidth() < 768) {
+            if ($(this).scrollTop() > 10) {
+                $('.header').addClass('transformed');
+            } else {
+                $('.header').removeClass('transformed');
+            }
         } else {
-            $('.header').removeClass('fixed');
+            if ($(this).scrollTop() > $('.header').outerHeight() + 50) {
+                $('.header').addClass('transformed');
+            } else {
+                $('.header').removeClass('transformed');
+            }
+
+            if ($(this).scrollTop() > $('.main').outerHeight()/2) {
+                $('.header').addClass('animated');
+            } else {
+                $('.header').removeClass('animated');
+            }
+            if ($(this).scrollTop() > $('.main').outerHeight()) {
+                $('.header').addClass('showed');
+            } else {
+                $('.header').removeClass('showed');
+            }
         }
+
     })
 
 
     $('.form__button').click(function(e) {
         var $this = $(this),
-        	$form = $(this).closest('.form'),
+            $form = $(this).closest('.form'),
             data = $this.closest('form').serialize(),
             $email = $this.closest('.form').find('input[name="email"]'),
             pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i,

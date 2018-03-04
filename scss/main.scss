@@ -1,5 +1,6 @@
 @import './node_modules/susy/sass/susy';
 @import '_vars.scss';
+@import '_swiper.scss';
 
 $susy: ( 'columns': susy-repeat(48),
 'gutters': 0,
@@ -7,6 +8,179 @@ $susy: ( 'columns': susy-repeat(48),
 'container-spread': 'narrow',
 );
 
+
+
+.swiper-wrapper,
+.swiper-slide {
+    height: auto;
+}
+
+.partners {
+    padding: 30px 0 45px;
+    background-color: #f9f9f9;
+    ;
+    &__title {
+        font-size: 18px;
+        font-family: semibold;
+        margin-bottom: 35px;
+    }
+    &__slider {}
+    &__item {
+        width: 235px;
+    }
+}
+
+.partner {
+    &__logo {
+        margin-bottom: 35px;
+        min-height: 59px;
+        min-width: 200px;
+        position: relative;
+        img {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            max-height: 59px;
+            max-width: 130px;
+        }
+    }
+}
+
+.text--partner {
+    h3 {
+        font-size: 16px;
+        font-family: semibold;
+        margin-bottom: 15px;
+    }
+    span {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 20px;
+        display: block;
+    }
+    p {
+        font-size: 16px;
+        font-family: semibold;
+        margin-bottom: 17px;
+    }
+    li {
+        font-size: 14px;
+        vertical-align: middle;
+        &+li {
+            margin-top: 15px;
+        }
+        &:before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            display: inline-block;
+            background-color: #1150f0;
+            margin-right: 7px;
+            vertical-align: middle;
+        }
+    }
+}
+
+.slogan {
+    &__logo {
+        display: none;
+    }
+    padding: 40px 0;
+    background-color: rgb(34, 37, 49);
+}
+
+.text--slogan {
+    h2 {
+        font-size: 48px;
+        line-height: 1.2;
+        color: #fff;
+        font-family: semibold;
+    }
+    p {
+        font-family: semibold;
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #fff;
+    }
+}
+
+.organizers {
+    padding: 35px 0;
+    &__title {
+        font-family: semibold;
+        font-size: 18px;
+        color: #000;
+        margin-bottom: 35px;
+    }
+    &__item {
+        max-width: 500px;
+        &+.organizers__item {
+            margin-top: 40px;
+        }
+    }
+}
+
+.organizer {
+    &__logo {
+        margin-bottom: 15px;
+        img {
+            width: 100%;
+        }
+    }
+    &--cordoba {
+        .organizer {
+            &__logo {
+                width: span(7 of 12);
+            }
+            &__text {
+                width: span(7 of 12);
+            }
+        }
+    }
+    &--synergy {
+        .organizer {
+            &__logo {
+                width: span(7 of 12);
+            }
+            &__text {
+                width: span(9.5 of 12);
+            }
+        }
+    }
+    &--noticias {
+        .organizer {
+            &__logo {
+                width: span(6 of 12);
+            }
+            &__text {
+                width: span(10 of 12);
+            }
+        }
+    }
+    &--crypto {
+        .organizer {
+            &__logo {
+                width: span(10 of 12);
+            }
+            &__text {
+                width: span(10 of 12);
+            }
+        }
+    }
+}
+
+.text--org {
+    h3 {
+        font-size: 18px;
+        font-family: semibold;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 14px;
+        line-height: 1.2;
+        color: rgba(0, 0, 0, 0.6);
+    }
+}
 
 .shedule {
     padding: 35px 0 0;
@@ -332,7 +506,7 @@ $susy: ( 'columns': susy-repeat(48),
         color: rgba(0, 0, 0, 0.6);
         font-size: 14px;
         font-family: 'med';
-        line-height: 1.3;
+        line-height: 1.4;
         &+span {
             margin-top: 22px;
         }
@@ -462,7 +636,7 @@ $susy: ( 'columns': susy-repeat(48),
             font-size: 20px;
             color: #fff;
             font-family: 'icon';
-            content: '\e900';
+            content: '\e90e';
             color: rgb(118, 119, 126);
         }
     }
@@ -782,6 +956,121 @@ $susy: ( 'columns': susy-repeat(48),
 }
 
 @media (min-width: 768px) {
+    .organizers {
+        padding: 60px 0 20px;
+        &__title {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        &__list {
+            font-size: 0;
+        }
+        &__item {
+            max-width: none;
+            width: span(5 of 12);
+            display: inline-block;
+            vertical-align: top;
+            margin-right: span(1 of 12);
+            margin-bottom: 70px;
+            &+.organizers__item {
+                margin-top: 0;
+            }
+        }
+    }
+    .organizer {
+        &__logo {
+            margin-bottom: 15px;
+            img {
+                width: 100%;
+            }
+        }
+        &--cordoba {
+            .organizer {
+                &__logo {
+                    width: span(3.5 of 5);
+                    margin-bottom: 20px;
+                }
+                &__text {
+                    width: span(3.5 of 5);
+                }
+            }
+        }
+        &--synergy {
+            .organizer {
+                &__logo {
+                    width: span(3.5 of 5);
+                    margin-bottom: 30px;
+                }
+                &__text {
+                    width: span(5 of 5);
+                }
+            }
+        }
+        &--noticias {
+            .organizer {
+                &__logo {
+                    width: span(3 of 5);
+                    margin-bottom: 30px;
+                }
+                &__text {
+                    width: span(4.5 of 5);
+                }
+            }
+        }
+        &--crypto {
+            .organizer {
+                &__logo {
+                    width: span(5 of 5);
+                    margin-bottom: 55px;
+                }
+                &__text {
+                    width: span(5 of 5);
+                }
+            }
+        }
+    }
+
+    .text--org {
+        h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+    }
+
+    .slogan {
+        position: relative;
+        overflow: hidden;
+        &__logo {
+            display: block;
+            z-index: 0;
+            position: absolute;
+            width: 586px;
+            top: -154px;
+            left: -10px;
+            img {
+                width: 100%;
+            }
+        }
+        &__text {
+            position: relative;
+            z-index: 1;
+        }
+        padding: 70px 0 90px;
+    }
+
+    .text--slogan {
+        h2 {
+            font-size: 62px;
+        }
+        p {
+            font-size: 36px;
+            margin-bottom: 7px;
+        }
+    }
+
 
 
     .shedule {
@@ -902,6 +1191,7 @@ $susy: ( 'columns': susy-repeat(48),
         }
         span {
             font-size: 16px;
+            line-height: 1.2;
         }
         li {
             font-size: 16px;
@@ -1051,7 +1341,7 @@ $susy: ( 'columns': susy-repeat(48),
             display: inline-block;
             vertical-align: top;
             box-sizing: border-box;
-            height: 430px;
+            height: 480px;
             margin-bottom: 35px;
             max-width: none;
             &+.tickets__item {
@@ -1068,8 +1358,9 @@ $susy: ( 'columns': susy-repeat(48),
             position: relative;
         }
         &__body {
-            height: 430px;
+            height: 480px;
             box-sizing: border-box;
+            padding: 30px 5px 45px 30px;
         }
         &__button {
             margin-top: -70px;
@@ -1165,10 +1456,126 @@ $susy: ( 'columns': susy-repeat(48),
             padding: 0;
         }
     }
+
+
+    .partners {
+        padding: 40px 0 85px;
+        background-color: #f9f9f9;
+        ;
+        &__title {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        &__slider {}
+        &__item {
+            width: 242px;
+        }
+    }
+    .partner {
+        &__logo {
+            margin-bottom: 35px;
+            min-height: 96px;
+            min-width: 200px;
+            position: relative;
+            img {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                max-height: 96px;
+                max-width: 210px;
+            }
+        }
+    }
 }
 
 @media (min-width: 1024px) {
- 
+
+    .organizers {
+        padding: 90px 0 20px;
+        &__title {
+            margin-bottom: 60px;
+            padding-left: span(1 of 12);
+        }
+        &__list {
+            font-size: 0;
+            padding: 0 span(1 of 12)
+        }
+        &__item {
+            margin-right: 0;
+            margin-bottom: 50px;
+        }
+    }
+    .organizer {
+        &--cordoba {
+            .organizer {
+                &__logo {
+                    width: span(3.3 of 5);
+                    margin-bottom: 30px;
+                }
+                &__text {
+                    width: span(2.5 of 5);
+                }
+            }
+        }
+        &--synergy {
+            .organizer {
+                &__logo {
+                    width: span(3.3 of 5);
+                    margin-bottom: 40px;
+                }
+                &__text {
+                    width: span(3.5 of 5);
+                }
+            }
+        }
+        &--noticias {
+            .organizer {
+                &__logo {
+                    width: span(2.8 of 5);
+                    margin-bottom: 40px;
+                }
+                &__text {
+                    width: span(3.2 of 5);
+                }
+            }
+        }
+        &--crypto {
+            .organizer {
+                &__logo {
+                    width: span(4.8 of 5);
+                    margin-bottom: 70px;
+                }
+                &__text {
+                    width: span(4 of 5);
+                }
+            }
+        }
+    }
+
+    .text--org {
+        h3 {
+            margin-bottom: 10px;
+        }
+    }
+
+
+    .slogan {
+        &__logo {
+            width: 841px;
+            top: -332px;
+            left: -20px;
+        }
+        padding: 70px 0 65px;
+    }
+
+    .text--slogan {
+        h2 {
+            font-size: 84px;
+        }
+    }
+
+
+
 
     .shedule {
         &__title {
@@ -1251,7 +1658,6 @@ $susy: ( 'columns': susy-repeat(48),
 
     .text--support {
         p {
-            line-height: 1.2;
             &+span {
                 margin-top: 20px;
             }
@@ -1428,12 +1834,158 @@ $susy: ( 'columns': susy-repeat(48),
             border-top: 1px solid rgba(33, 37, 48, 0.1);
         }
     }
+
+
+    .partners {
+        padding: 0 0 60px;
+        &__title {
+            margin-bottom: 0;
+            padding-left: 35px;
+            box-sizing: border-box;
+            width: span(3 of 12);
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &__nav {
+            width: span(2 of 12);
+            margin-left: span(7 of 12);
+            font-size: 0;
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &__item {
+            width: 250px;
+        }
+        &__top {
+            font-size: 0;
+            margin: 0 -20px 65px;
+            padding: 28px 20px 19px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        }
+        .swiper-wrapper {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+        &__btn {
+            height: 43px;
+            width: 43px;
+            display: inline-block;
+            vertical-align: middle;
+            cursor: pointer;
+            &+.partners__btn {
+                margin-left: 32px;
+            }
+            &::before {
+                font-family: 'icon';
+                color: #000;
+                font-size: 43px;
+                content: "\e90d";
+            }
+            &--prev {
+                transform: rotate(180deg);
+            }
+        }
+    }
+    .partner {
+        &__logo {
+            img {
+                max-height: 96px;
+                max-width: 210px;
+            }
+        }
+    }
 }
 
 
 
 @media (min-width: 1240px) {
-    
+
+    .organizers {
+        &__title {
+            margin-bottom: 75px;
+            padding-left: 0;
+        }
+        &__list {
+            font-size: 0;
+            padding: 0;
+        }
+        &__item {
+            margin-bottom: 95px;
+        }
+    }
+    .organizer {
+        &--cordoba {
+            .organizer {
+                &__logo {
+                    width: span(3.9 of 6);
+                    margin-bottom: 25px;
+                }
+                &__text {
+                    width: span(4 of 6);
+                }
+            }
+        }
+        &--synergy {
+            .organizer {
+                &__logo {
+                    width: span(3.6 of 6);
+                    margin-bottom: 45px;
+                }
+                &__text {
+                    width: span(4.1 of 6);
+                }
+            }
+        }
+        &--noticias {
+            .organizer {
+                &__logo {
+                    width: span(3.2 of 6);
+                    margin-bottom: 40px;
+                }
+                &__text {
+                    width: span(4.5 of 6);
+                }
+            }
+        }
+        &--crypto {
+            .organizer {
+                &__logo {
+                    width: span(5.4 of 6);
+                    margin-bottom: 80px;
+                }
+                &__text {
+                    width: span(4 of 6);
+                }
+            }
+        }
+    }
+
+    .text--org {
+        h3 {
+            margin-bottom: 15px;
+        }
+    }
+
+
+    .slogan {
+        &__logo {
+            top: -291px;
+            left: -44px;
+        }
+        padding: 70px 0 55px;
+    }
+
+    .text--slogan {
+        h2 {
+            font-size: 97px;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+
     .shedule {
         &__container {
             font-size: 0;
@@ -1659,10 +2211,119 @@ $susy: ( 'columns': susy-repeat(48),
     .button--orange-shadow {
         box-shadow: 0 13px 29px 0 rgba(246, 146, 31, 0);
     }
+
+
+
+
+    .partners {
+        padding: 0 0 95px;
+        &__title {
+            padding-left: 0;
+            width: span(3 of 12);
+        }
+        &__nav {
+            text-align: right;
+        }
+        &__item {
+            width: 288px;
+        }
+        &__top {
+            margin: 0 0 65px;
+            padding: 50px 0 19px;
+        }
+        &__btn {
+            width: 38px;
+            &+.partners__btn {
+                margin-left: 0;
+            }
+            &::before {
+                transition: 0.3s ease;
+                color: rgba(0, 0, 0, 0.3);
+            }
+            &:hover {
+                &::before {
+                    color: rgba(0, 0, 0, 1);
+                }
+            }
+        }
+    }
 }
 
 @media (min-width: 1560px) {
-  
+
+    .organizers {
+        padding: 95px 0 0;
+        &__title {
+            margin-bottom: 100px;
+        }
+        &__item {
+            margin-bottom: 120px;
+        }
+    }
+    .organizer {
+        &--cordoba {
+            .organizer {
+                &__logo {
+                    width: span(3.8 of 6);
+                    margin-bottom: 50px;
+                }
+                &__text {
+                    width: span(3.8 of 6);
+                }
+            }
+        }
+        &--synergy {
+            .organizer {
+                &__logo {
+                    margin-bottom: 70px;
+                }
+                &__text {
+                    width: span(3.6 of 6);
+                }
+            }
+        }
+        &--noticias {
+            .organizer {
+                &__logo {
+                    width: span(3.2 of 6);
+                    margin-bottom: 45px;
+                }
+            }
+        }
+        &--crypto {
+            .organizer {
+                &__logo {
+                    margin-bottom: 90px;
+                }
+            }
+        }
+    }
+
+    .slogan {
+        &__logo {
+            width: 757px;
+            top: -286px;
+            left: 14px;
+        }
+        &__container {
+            position: relative;
+        }
+        &__text {
+            padding-left: 40px;
+            box-sizing: border-box;
+        }
+        padding: 70px 0;
+    }
+
+    .text--slogan {
+        h2 {
+            font-size: 132px;
+            white-space: nowrap;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
 
     .shedule {
         padding-top: 100px;
@@ -1892,7 +2553,53 @@ $susy: ( 'columns': susy-repeat(48),
         height: 90px;
         line-height: 90px;
     }
+
+
+    .partners {
+        .swiper-wrapper {
+            max-width: 1440px;
+        }
+        &__title {}
+        &__nav {
+            width: span(1 of 12);
+            margin-left: 65.46667%;
+            text-align: left;
+        }
+        &__item {
+            width: 300px;
+        }
+        &__top {
+            padding: 63px 0 19px;
+        }
+        &__btn {
+            &+.partners__btn {
+                margin-left: 28px;
+            }
+        }
+    }
+
+    .text--partner {
+        h3 {
+            font-size: 21px;
+            margin-bottom: 13px;
+        }
+        span {
+            margin-bottom: 21px;
+        }
+        li {
+            font-size: 16px;
+            &+li {
+                margin-top: 17px;
+            }
+        }
+    }
 }
+
+
+
+
+
+
 
 
 
